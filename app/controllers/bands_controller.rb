@@ -20,6 +20,11 @@ class BandsController < ApplicationController
     render :index
   end
 
+  def edit
+    @band = current_band
+    render :edit
+  end
+
   def update
     @band = current_band
     render :new
