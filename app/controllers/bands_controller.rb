@@ -1,6 +1,7 @@
 class BandsController < ApplicationController
   def create
-    @band = Band.new(params[:name])
+    @band = Band.new(
+      name: params[:band][:name])
     if @band.save
       render :index
     else
@@ -20,10 +21,16 @@ class BandsController < ApplicationController
   end
 
   def update
-    @band = current_band.find(params[:id])
+    @band = current_band
     render :new
+  end
+
+  def show
+    @band = current_band
+    render :show
   end
 
   def destroy
   end
+
 end
