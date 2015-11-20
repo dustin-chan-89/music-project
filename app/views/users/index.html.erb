@@ -1,0 +1,9 @@
+<h1> (for debugging) </h1>
+<%= auth_token %>
+<ul>
+  <% @users.each do |user|%>
+    <li><%= link_to user.email, users_url(user) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Create User", new_user_url%>
